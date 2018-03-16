@@ -10,8 +10,7 @@
 .grid-wrap {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  justify-content: center; }
+  width: 100%; }
 
 .col {
   background-color: red;
@@ -58,3 +57,46 @@
 @media (max-width: 460px) {
   .col {
     width: 100%; } }
+
+#style-guide .colour-box {
+  width: 100px;
+  height: 100px;
+  background: red; }
+
+#style-guide a {
+  display: block; }
+
+#loading-image {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute; }
+  #loading-image .wrap {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center; }
+    #loading-image .wrap .point {
+      background-color: #d0d;
+      position: relative;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+      height: 20px;
+      width: 20px;
+      animation: loading 0.7s ease-in-out infinite alternate;
+      margin: 0 10px; }
+      #loading-image .wrap .point.is--02 {
+        animation-delay: 0.46667s;
+        background-color: #00d;
+        left: calc(50% - $tamanho /2); }
+      #loading-image .wrap .point.is--03 {
+        animation-delay: 0.7s;
+        background-color: #0d0;
+        right: 0; }
+
+@keyframes loading {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(50px); } }

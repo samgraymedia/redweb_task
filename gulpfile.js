@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
-  clean = require('gulp-clean'),
+  minify = require('gulp-minify'),
   browserSync = require('browser-sync').create();
 
 
@@ -22,6 +22,18 @@ gulp.task('autoprefixer', () =>
   .pipe(browserSync.stream())
 );
 
+gulp.task('compress', () =>
+  gulp.src('src/js/**/*.js')
+  .pipe(minify({
+    ext: {
+      min: '.min.js'
+    },
+    exclude: ['tasks'],
+    ignoreFiles: ['.combo.js', '-min.js']
+  }))
+  .pipe(gulp.dest('dest/js'))
+);
+
 
 gulp.task('serve', ['styles'], () =>
 
@@ -31,7 +43,8 @@ gulp.task('serve', ['styles'], () =>
 
 gulp.watch('src/sass/**/*.sass', ['styles']);
 gulp.watch('src/sass/css/style.css', ['autoprefixer']).on('change', browserSync.reload);
-gulp.watch('dest/index.html', []).on('change', browserSync.reload);;
+gulp.watch('dest/index.html', []).on('change', browserSync.reload);
+gulp.watch('src/js/**/*.js', ['compress']);
 
 
-gulp.task('default', ['styles', 'autoprefixer', 'serve']);
+gulp.task('default', ['styles', 'autoprefixer', 'compress', 'serve']);
