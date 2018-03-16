@@ -1,0 +1,25 @@
+{
+  "name": "redweb_task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samgraymedia/redweb_task.git"
+  },
+  "author": "Samuel Gray",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samgraymedia/redweb_task/issues"
+  },
+  "homepage": "https://github.com/samgraymedia/redweb_task#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.8.8",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
