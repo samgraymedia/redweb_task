@@ -4,7 +4,7 @@ $.ajax({
   success: function(data) {
     console.log(data);
     $(data).each(function() {
-      $('.data').append('<h1>' + this.name + '</h1>')
+      $('.data').append('<h1>' + this.name + '</h1>' + '<p>' + this.username + '</p>')
     });
   },
   complete: function() {
