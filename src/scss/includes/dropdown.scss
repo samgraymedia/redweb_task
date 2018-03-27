@@ -6,6 +6,12 @@
   margin: 32px 0;
 }
 
+.arrow {
+  background: url("../media/dropdown.png") no-repeat 96% 50%;
+  width: 100%;
+  height: 100%;
+}
+
 .styled-select select {
   background: transparent;
   border: none;
@@ -20,9 +26,10 @@
 
 .rounded {
   -webkit-border-radius: 20px;
+  background: white;
   -moz-border-radius: 20px;
   border-radius: 20px;
   box-shadow: inset 0 0 2px 0 rgba(0,0,0,0.75);
   height: 50px;
-  width: 23%;
+  width: 295px;
 }

@@ -1,6 +1,6 @@
 .book-container {
   color: $font;
-  width: 20%;
+  width: 265px;
   background: $container-bg;
   padding: 15px;
   position: relative;
@@ -21,13 +21,18 @@
     font-size: 0.9rem;
   }
 
+  img {
+    width: 188px;
+    height: 188px;
+  }
+
   .age-range {
     background-color: #efece9;
-    padding: 15px 1.5rem 1rem;
+    padding: 1.2rem 1.5rem 0.5rem;
     position: absolute;
     bottom: -15px;
     left: 0;
-    width: 80.5%;
+    width: 241px;
     z-index: -1;
   }
 }
