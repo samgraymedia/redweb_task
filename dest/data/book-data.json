@@ -1,0 +1,34 @@
+{
+   "books":[
+      {
+         "title":"Lost and found",
+         "author":"Oliver Jeffers",
+         "coverImage":"lost-and-found.png",
+         "ageGroup":"4+"
+      },
+      {
+         "title":"It’s so Unfair!",
+         "author":"Pat Thompson",
+         "coverImage":"its-so-unfair.png",
+         "ageGroup":"2-5"
+      },
+      {
+         "title":"Oi Frog!",
+         "author":"Kes Grey and Jim Field",
+         "coverImage":"oi-frog.png",
+         "ageGroup":"2+"
+      },
+      {
+         "title":"The slightly annoying elephant",
+         "author":"David Walliams",
+         "coverImage":"the-slightly-annoying-elephant.png",
+         "ageGroup":"3+"
+      },
+      {
+         "title":"Toys in Space",
+         "author":"Mini Grey",
+         "coverImage":"toys-in-space.png",
+         "ageGroup":""
+      }
+   ]
+}

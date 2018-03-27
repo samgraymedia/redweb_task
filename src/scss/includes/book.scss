@@ -1,0 +1,15 @@
+.book-container:after {
+  content: '';
+  width: 355px;
+  height: 52px;
+  display: block;
+  position: absolute;
+  border-bottom: 20px solid #9a9da0;
+  bottom: -60px;
+  left: -30px;
+  z-index: -4;
+  background-image: url("../media/shelf.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+}
