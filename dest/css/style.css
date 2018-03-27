@@ -1,9 +1,40 @@
 * {
-  padding: 0;
   margin: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif; }
+  padding: 0;
+  font-size: 18px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
 
 .wrap {
   margin: 0 auto;
-  width: 85%; }
+  width: 85%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.book-container {
+  color: #4b5055;
+  width: 20%;
+  background: #e4dfda;
+  padding: 15px;
+  position: relative;
+  z-index: 0; }
+  .book-container .book-cover {
+    text-align: center;
+    z-index: 0; }
+  .book-container h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold; }
+  .book-container p {
+    font-size: 0.9rem; }
+  .book-container .age-range {
+    background-color: #efece9;
+    padding: 15px 1.5rem 1rem;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 80.5%;
+    z-index: -1; }
