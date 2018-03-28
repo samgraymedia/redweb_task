@@ -1,48 +1,5 @@
-// $.ajax({
-//   type: "GET",
-//   url: "../data/book-data.json",
-//   cache: false,
-//   dataType: "JSON",
-//   data: {
-//     get_param: 'value'
-//   },
-//   success: function(data) {
-//     console.log(data);
-//     $(data.books).each(function() {
-//       $('.dropdown').append('<option>' + this.title + '</option>')
-//
-//     });
-//     var books = JSON.stringify(data)
-//     $(document).ready(function() {
-//       $('.book-wrap').prepend('<h3>' + books[0] + '</h3>');
-//       $('.book-wrap').append('<p>' + books.author + '</p>');
-//     });
-//     $(document).on('change', '.dropdown', function(e) {
-//       $(".book-wrap").children("h3").empty();
-//       $(".book-wrap").children("p").empty();
-//       $(".book-cover").children("img").empty();
-//
-//
-//
-//
-//       console.log(this.options[e.target.selectedIndex].text);
-//       $('.book-wrap').prepend('<h3>' + this.options[e.target.selectedIndex].text + '</h3>');
-//       $('.book-wrap').append('<p>' + data + '</p>');
-//
-//
-//     });
-//   },
-//
-//   complete: function() {
-//     $('#loading-image').hide();
-//   }
-// });
-
-
-
-
+//a var to track which book a user has selected, on load its the first in the array.
 var obj = 0;
-
 $.ajax({
   type: "GET",
   url: "../data/book-data.json",
@@ -51,17 +8,21 @@ $.ajax({
   data: {
     get_param: 'value'
   },
+  //if getting the json is successful
   success: function(data) {
-    console.log(data);
     var data = JSON.parse(data);
+    //for each book put every title into the select as an option
     $(data.books).each(function() {
       $('.dropdown').append('<option>' + this.title + '</option>')
     });
+    //on change of the select
     $(document).on('change', '.dropdown', function(e) {
-      $(".book-wrap").children("h3").remove();
-      $(".book-wrap").children("p").remove();
-      $(".book-cover").children("img").remove();
-      $(".age-range").children("p", "strong").remove();
+      //empty any data that is currently in the app
+      $('.title').text("");
+      $('.author').text("");
+      $('.bookCover').attr('src', "");
+      $('.age').text("");
+      //check which book they have selected and changing the obj var accordenly
       if (this.options[e.target.selectedIndex].text === data.books[0].title) {
         obj = 0;
       } else if (this.options[e.target.selectedIndex].text === data.books[1].title) {
@@ -73,16 +34,28 @@ $.ajax({
       } else if (this.options[e.target.selectedIndex].text === data.books[4].title) {
         obj = 4;
       }
-      $('.book-wrap').prepend('<p>' + data.books[obj].author + '</p>');
-      $('.book-wrap').prepend('<h3>' + data.books[obj].title + '</h3>');
-      $('.book-cover').append('<img src="../media/books/' + data.books[obj].coverImage + '" >');
-      $('.age-range').append('<p> aimed at <strong>' + data.books[obj].ageGroup + '</strong></p>');
+      //append the data to the app
+      $('.title').text(data.books[obj].title);
+      $('.author').text(data.books[obj].author);
+      $('.bookCover').attr('src', '../media/books/' + data.books[obj].coverImage);
+      $('.aimed').text("aimed at ");
+      $('.aimed').append("<strong>" + data.books[obj].ageGroup + "</strong>")
+
+      //checking to see if there is an age range
+      if (data.books[obj].ageGroup === "") {
+        $('.aimed').text("Sorry, no age range available");
+        $('.aimed').append("");
+      }
+
 
     });
-    $('.book-wrap').prepend('<p>' + data.books[obj].author + '</p>');
-    $('.book-wrap').prepend('<h3>' + data.books[obj].title + '</h3>');
-    $('.book-cover').append('<img src="../media/books/' + data.books[obj].coverImage + '" >');
-    $('.age-range').append('<p> aimed at <strong>' + data.books[obj].ageGroup + '</strong></p>');
+    //append the data to the app on first load
+    $('.title').text(data.books[obj].title);
+    $('.author').text(data.books[obj].author);
+    $('.bookCover').attr('src', '../media/books/' + data.books[obj].coverImage);
+    $('.aimed').text("aimed at ");
+    $('.aimed').append("<strong>" + data.books[obj].ageGroup + "</strong>")
+
   },
 
 });

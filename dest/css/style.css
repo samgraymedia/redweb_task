@@ -42,7 +42,8 @@ body {
   min-height: 245px; }
   .book-container .book-cover {
     text-align: center;
-    z-index: 0; }
+    z-index: 0;
+    margin-top: 21px; }
   .book-container h3 {
     margin: 0;
     font-size: 1rem;
@@ -54,12 +55,15 @@ body {
     height: 188px; }
   .book-container .age-range {
     background-color: #efece9;
-    padding: 1.2rem 1.5rem 0.5rem;
+    padding: 0.7rem 1.5rem 0.5rem;
     position: absolute;
     bottom: -15px;
     left: 0;
     width: 241px;
     z-index: -1; }
+    .book-container .age-range strong {
+      font-size: 24px;
+      margin-left: 5px; }
 
 .styled-select {
   background: url("../media/dropdown.png") no-repeat 96% 50%;
@@ -82,12 +86,13 @@ body {
   /* If you add too much padding here, the options won't show in IE */
   width: 120%;
   margin: 0 10px 20px 0;
-  height: 50px; }
+  height: 50px;
+  color: #4b5055; }
 
 .rounded {
   -webkit-border-radius: 20px;
   background: white;
-  border-radius: 20px;
+  border-radius: 50px;
   box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.75);
   height: 50px;
   width: 295px; }

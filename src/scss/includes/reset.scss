@@ -1,3 +1,5 @@
+//resetting the margin and padding the browser gives the body
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +10,7 @@
 body {
   background: #e5e5e5;
 }
-
+//main wrap for the content, flexing the children to center them perfectly
 .wrap {
   margin: 0 auto;
   width: 85%;
