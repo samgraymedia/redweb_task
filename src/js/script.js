@@ -47,6 +47,8 @@ $.ajax({
         $('.aimed').append("");
         $('.age-range').css('padding', '1.2rem 1.5rem 0.5rem');
 
+      } else {
+        $('.age-range').css('padding', '0.7rem 1.5rem 0.5rem');
       }
 
 

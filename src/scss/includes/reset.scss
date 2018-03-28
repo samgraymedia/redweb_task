@@ -10,7 +10,8 @@
 body {
   background: #e5e5e5;
 }
-//main wrap for the content, flexing the children to center them perfectly
+//main wrap for the content, flexing the children to center them perfectly regardless of screen size
+
 .wrap {
   margin: 0 auto;
   width: 85%;
