@@ -45,6 +45,8 @@ $.ajax({
       if (data.books[obj].ageGroup === "") {
         $('.aimed').text("Sorry, no age range available");
         $('.aimed').append("");
+        $('.age-range').css('padding', '1.2rem 1.5rem 0.5rem');
+
       }
 
 
