@@ -32,6 +32,9 @@ body {
   background-position: center bottom;
   background-size: contain; }
 
+@media only screen and (min-device-width: 480px) {
+  margin-right: 10px; }
+
 .book-container {
   color: #4b5055;
   width: 265px;
